@@ -1,0 +1,52 @@
+<div class="container">
+  <form #form="ngForm" >
+      <div class='inputMain'>
+        <div>
+          <div class="label">First name</div>
+          <div class="input"><input type="text" name="firstName" id="firstName" class="userFirstname" [(ngModel)]='newPerson.firstName'></div>
+          <div style="clear:both;"></div>
+        </div>
+        <div>
+          <div class="label">Last name</div>
+          <div class="input"><input type="text" name="lastName" id="lastName" class="userLastname" [(ngModel)]='newPerson.lastName'></div>
+          <div style="clear:both;"></div>
+        </div>
+
+        <div>
+          <div class="label">Phone Number</div>
+          <div class="input">
+            <input type="tel" name="phoneNumber" id="phoneNumber" class="userPhone"  [(ngModel)]='newPerson.phoneNumber'>
+          </div>
+          <div style="clear:both;"></div>
+        </div>
+
+
+        <input type="submit" value="submit" class="submitButton" (click)="addPerson()">
+      </div>
+
+
+
+    <div class="alert" *ngIf="errors.length > 0">
+      <div *ngFor='let errorMessage of errors'>
+        {{errorMessage}}
+      </div>
+    </div>
+
+
+  <div class="informationTable">
+    <table *ngIf='phoneBook.people.length > 0'>
+      <tr >
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+      </tr>
+      <tr *ngFor='let person of phoneBook.people'>
+        <td>{{person.firstName}}</td>
+        <td>{{person.lastName}}</td>
+        <td>{{person.getFormattedPhoneNumber() }}</td>
+      </tr>
+    </table>
+  </div>
+
+  </form>
+</div>

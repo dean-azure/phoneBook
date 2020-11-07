@@ -1,0 +1,39 @@
+div.label {
+  width:200px;
+  float:left;
+}
+div.input {
+  width:200px;
+  float:left;
+}
+
+input[type=text] {
+  width: 200px;
+}
+
+input[type=submit] {
+  width: 100px;
+}
+
+
+div.inputMain {
+  margin-bottom: 15px;
+
+}
+
+
+div.alert{
+  color:red;
+  font-weight:bolder;
+  background-color: #ffb3b3;
+  width:600px;
+  margin:10px 0px 10px 0px;
+  font-weight: 250;
+}
+
+
+th {
+  width: 125px;
+  text-align: left;
+
+}
